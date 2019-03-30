@@ -25,7 +25,7 @@ SECRET_KEY = '39%sqce1ap0k83(v9seg4tq%r46tw&47#gq#$*1w45v2cez10$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.io', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'video',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +120,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+#정적파일이 위치한 경로들을 지정하는 설정 항목
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
