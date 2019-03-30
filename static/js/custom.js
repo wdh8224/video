@@ -9,7 +9,7 @@ Version: 1.0
   // Toggle the side navigation
    $(document).on('click', '#sidebarToggle', function(e) {  
     e.preventDefault();
-    $("body").toggleClass("sidebar-toggled");
+    $("body").removeClass("sidebar-toggled");
     $(".sidebar").toggleClass("toggled");
   });
 

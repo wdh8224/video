@@ -21,5 +21,8 @@ from video import controller
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', controller.enroll_request),
+    path('', controller.request),
+    path('detail', controller.request_detail, name="detail"),
+    path('upload', controller.upload, name="upload"),
+    path('channels', controller.channels, name="channels"),
 ]
