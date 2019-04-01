@@ -9,8 +9,9 @@ Version: 1.0
   // Toggle the side navigation
    $(document).on('click', '#sidebarToggle', function(e) {  
     e.preventDefault();
-    $("body").removeClass("sidebar-toggled");
+    // $("body").removeClass("sidebar-toggled");
     $(".sidebar").toggleClass("toggled");
+    $("body").toggleClass("sidebar-toggled");
   });
 
   // Prevent the content wrapper from scrolling when the fixed side navigation hovered over
