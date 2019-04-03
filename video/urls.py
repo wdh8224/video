@@ -25,5 +25,6 @@ urlpatterns = [
     path('detail', controller.request_detail, name="detail"),
     path('upload', controller.upload, name="upload"),
     path('channels', controller.channels, name="channels"),
-    path('/upload/video', controller.upload_video, name="upload_video")
+    path('upload/video', controller.upload_video, name="upload_video"),
+    path('logout', controller.logout, name="logout"),
 ]

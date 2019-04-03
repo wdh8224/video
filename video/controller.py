@@ -19,3 +19,7 @@ def channels(request):
 
 def upload_video(request):
     return render(request, 'channels.html')
+
+
+def logout(request):
+    return render(request, 'login.html')
