@@ -15,3 +15,7 @@ def upload(request):
 
 def channels(request):
     return render(request, 'channels.html')
+
+
+def upload_video(request):
+    return render(request, 'channels.html')

@@ -25,7 +25,7 @@
          <button class="btn btn-link btn-sm text-secondary order-1 order-sm-0" id="sidebarToggle">
          <i class="fas fa-bars"></i>
          </button> &nbsp;&nbsp;
-         <a class="navbar-brand mr-1" href="index.html"><img class="img-fluid" alt="" src="img/logo.png"></a>
+         <a class="navbar-brand mr-1" href="index.html"><img class="img-fluid" alt="" src="/static/img/logo.png"></a>
          <!-- Navbar Search -->
          <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-5 my-2 my-md-0 osahan-navbar-search">
             <div class="input-group">
@@ -71,7 +71,7 @@
             </li>
             <li class="nav-item dropdown no-arrow osahan-right-navbar-user">
                <a class="nav-link dropdown-toggle user-dropdown-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <img alt="Avatar" src="img/user.png">
+               <img alt="Avatar" src="/static/img/user.png">
                Osahan 
                </a>
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -91,27 +91,33 @@
          <div id="content-wrapper">
             <div class="container-fluid upload-details">
                <div class="row">
-                  <div class="col-lg-12">
+                   <div class="col-lg-12">
                      <div class="main-title">
                         <h6>Upload Details</h6>
                      </div>
                   </div>
-                  <div class="col-lg-2">
-                     <div class="imgplace"></div>
-                  </div>
-                  <div class="col-lg-10">
-                     <div class="osahan-title">Contrary to popular belief, Lorem Ipsum (2019) is not.</div>
-                     <div class="osahan-size">102.6 MB . 2:13 MIN Remaining</div>
-                     <div class="osahan-progress">
-                        <div class="progress">
-                           <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"   aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-                        </div>
-                        <div class="osahan-close">
-                           <a href="#"><i class="fas fa-times-circle"></i></a>
-                        </div>
-                     </div>
-                     <div class="osahan-desc">Your Video is still uploading, please keep this page open until it's done.</div>
-                  </div>
+
+                   
+                   <div class="col-lg-2">
+                         <div class="imgplace">
+                             <div id="iframe_src" style="height: 100%"></div>
+                         </div>
+                          </div>
+                          <div class="col-lg-10">
+                             <div class="osahan-title">Contrary to popular belief, Lorem Ipsum (2019) is not.</div>
+                             <div class="osahan-size">102.6 MB . 2:13 MIN Remaining</div>
+                             <div class="osahan-progress">
+                                <div class="progress">
+                                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"   aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                </div>
+                                <div class="osahan-close">
+                                   <a href="#"><i class="fas fa-times-circle"></i></a>
+                                </div>
+                             </div>
+                             <div class="osahan-desc">Your Video is still uploading, please keep this page open until it's done.</div>
+                          </div>
+
+
                </div>
                <hr>
                <div class="row">
@@ -119,6 +125,12 @@
                      <div class="osahan-form">
                         <div class="row">
                            <div class="col-lg-12">
+                              <div class="form-group">
+                                 <label for="e1">Video URL</label>
+                                 <input type="text" placeholder="Google URL" id="google_url" name="google_url" class="form-control">
+                              </div>
+                           </div>
+                            <div class="col-lg-12">
                               <div class="form-group">
                                  <label for="e1">Video Title</label>
                                  <input type="text" placeholder="Contrary to popular belief, Lorem Ipsum (2019) is not." id="e1" class="form-control">
@@ -356,7 +368,8 @@
                         </div>
                      </div>
                      <div class="osahan-area text-center mt-3">
-                        <button class="btn btn-outline-primary">Save Changes</button>
+                         <button class="btn btn-outline-primary" onclick="get_google_info()">추가</button>
+                         <button class="btn btn-outline-primary">저장</button>
                      </div>
                      <hr>
                      <div class="terms text-center">
@@ -379,8 +392,8 @@
                      </div>
                      <div class="col-lg-6 col-sm-6 text-right">
                         <div class="app">
-                           <a href="#"><img alt="" src="img/google.png"></a>
-                           <a href="#"><img alt="" src="img/apple.png"></a>
+                           <a href="#"><img alt="" src="/static/img/google.png"></a>
+                           <a href="#"><img alt="" src="/static/img/apple.png"></a>
                         </div>
                      </div>
                   </div>
@@ -421,5 +434,14 @@
       <script src="/static/vendor/owl-carousel/owl.carousel.js"></script>
       <!-- Custom scripts for all pages-->
       <script src="/static/js/custom.js"></script>
+      <script>
+          function get_google_info(){
+            var google_url = document.getElementById('google_url').value;
+            console.log(google_url);
+            {#https://docs.google.com/file/d/0B7CQ5XvLuIGrQlJUNUhpQVltZ0U/preview#}
+            {#iframe_div = document.getElementById('iframe_src').innerHTML = "<iframe width='100%' height='100%' src='https://docs.google.com/file/d/0B7CQ5XvLuIGrQlJUNUhpQVltZ0U/preview' frameborder='0' allow='encrypted-media'></iframe>";#}
+             $('#myTable').append('<div class=\"col-lg-2\"> <div class=\"implace\"></div></div><div class=\"col-lg-10\"></div>');
+        }
+      </script>
    </body>
 </html>
